@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Productos Naturales - Aroma Flor</title>
+    <style>
+        /* Reset de estilos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilos de la sección del blog */
+        .blog-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f5f5f5;
+        }
+
+        .blog-section h2 {
+            font-size: 2.5rem;
+            color: #3c3c3c;
+            margin-bottom: 30px;
+        }
+
+        .blog-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .blog-post {
+            width: 300px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-post img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .blog-post h3 {
+            font-size: 1.5rem;
+            color: #4a4a4a;
+            margin: 15px;
+        }
+
+        .blog-post p {
+            font-size: 1rem;
+            color: #6a6a6a;
+            margin: 15px;
+        }
+
+        .blog-post button {
+            display: block;
+            width: calc(100% - 30px);
+            margin: 15px;
+            padding: 10px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .blog-post button:hover {
+            background-color: #45a049;
+        }
+
+        /* Estilos del modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            text-align: left;
+            position: relative;
+        }
+
+        .modal-content h3 {
+            font-size: 1.8rem;
+            color: #4a4a4a;
+        }
+
+        .modal-content p {
+            font-size: 1rem;
+            color: #6a6a6a;
+            margin-top: 15px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #f0f0f0;
+        }
+
+        header img {
+            width: 120px; /* Ajusta el tamaño según sea necesario */
+            height: auto;
+            margin-right: 30px;
+        }
+
+        header h1, header h3 {
+            margin: 0;
+            color: #333;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        header h3 {
+            font-size: 2.3em;
+            color: #666;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav a:hover {
+            color: #f7cac9;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Documento A4 Portada Propuesta de Proyecto Acuarela Verde y Dorado (Presentación).png" alt="Aroma Flor imagen principal">
+        <div>
+            <h1>Aroma Flor</h1>
+            <h3>Aceites esenciales</h3>
+        </div>
+    </header>
+    
+    <nav>
+        <a href="index.html">Tienda</a>
+        <a href="wholesale.html">Venta a mayoreo</a>
+        <a href="Blog.html">Blog y nuestros productos</a>
+        <a href="nosotros.html">Nosotros</a>
+    </nav>
+    
+    <section class="blog-section">
+        <h2>Blog de Productos Naturales</h2>
+        <div class="blog-container" id="blog-container">
+            <!-- Artículo 1 -->
+            <div class="blog-post">
+                <img src="images/aceite-menta.jpg" alt="Aceite de Menta">
+                <h3>Beneficios del Aceite de Menta</h3>
+                <p>El aceite de menta es excelente para aliviar dolores de cabeza, mejorar la concentración y refrescar el ánimo. Descubre sus múltiples usos y beneficios.</p>
+                <button onclick="leerMas('Beneficios del Aceite de Menta', 'El aceite de menta es un excelente remedio natural...')">Leer más</button>
+            </div>
+            <!-- Artículo 2 -->
+            <div class="blog-post">
+                <img src="meno.jpg" alt="Flor de Camomila">
+                <h1>Descubre el Poder Relajante del Aceite de Camote Durante la Menopausia</h1>
+                <p>La menopausia es una etapa natural en la vida de las mujeres que trae consigo muchos cambios. Sin embargo, esto no significa que debamos soportar todos los síntomas incómodos sin buscar alivio. Una opción natural y efectiva que ha ganado popularidad es el aceite relajante de camote.</p>
+                <h2>¿Qué Hace Especial al Camote?</h2>
+                <p>El camote, además de ser delicioso, es una fuente rica en diosgenina, un compuesto natural que nuestro cuerpo puede convertir en progesterona. Este equilibrio hormonal puede aliviar muchos de los síntomas de la menopausia de manera natural.</p>
+                <button onclick="leerMas('Beneficios','Alivio Natural de Sofocos: Los sofocos son uno de los síntomas más molestos de la menopausia. Aplicar aceite de camote en puntos de pulso puede ayudar a reducir la frecuencia e intensidad de estos episodios, Mejora del Sueño: Muchas mujeres experimentan problemas de sueño durante la menopausia. El aceite de camote tiene propiedades relajantes que pueden ayudar a mejorar la calidad del sueño, Hidratación y Cuidado de la Piel: La menopausia a menudo causa sequedad en la piel. El aceite de camote es rico en vitamina A y antioxidantes, proporcionando una hidratación profunda y reduciendo los signos del envejecimiento, Apoyo Emocional: Los cambios hormonales pueden causar altibajos emocionales. El aceite de camote ayuda a equilibrar los niveles hormonales, promoviendo un estado de ánimo más estable y positivo.')">Leer más</button>
+            </div>
+            <!-- Artículo 3 -->
+            <div class="blog-post">
+                <img src="images/lavanda.jpg" alt="Lavanda">
+                <h3>Lavanda: La esencia de la tranquilidad</h3>
+                <p>La lavanda es famosa por sus propiedades relajantes. Aprende cómo puede ayudarte a reducir la ansiedad y mejorar tu descanso.</p>
+                <button onclick="leerMas('Lavanda: La esencia de la tranquilidad', 'La lavanda es una planta de propiedades...')">Leer más</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para leer más -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-content"></p>
+        </div>
+    </div>
+
+    <script>
+        function leerMas(title, content) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-content').innerText = content;
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function cerrarModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // Cerrar el modal si el usuario hace clic fuera de él
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('modal')) {
+                cerrarModal();
+            }
+        }
+    </script>
+</body>
+</html>
